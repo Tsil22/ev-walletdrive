@@ -1,0 +1,38 @@
+{
+  "defaults": {
+    "fuel": 1.625,
+    "home": 0.337
+  },
+  "fuel": {
+    "date": "2026-11-16",
+    "price": 1.625
+  },
+  "home": [
+    {
+      "name": "EAC 01",
+      "price": 0.337
+    }
+  ],
+  "networks": [],
+  "note": "Δεν βρέθηκαν δημοσιευμένες τιμές για τα δημόσια δίκτυα της Κύπρου. Βάλε στις Ρυθμίσεις τις τιμές του δικτύου που χρησιμοποιείς.",
+  "plans": [],
+  "sources": [
+    {
+      "title": "revma.cy",
+      "url": "https://revma.cy/el/electricity-prices"
+    },
+    {
+      "title": "EU Oil Bulletin",
+      "url": "https://www.fuel-prices.eu/weekly/"
+    }
+  ],
+  "tariffs": [
+    {
+      "id": "cy_eac01",
+      "kind": "flat",
+      "name": "EAC 01",
+      "price": 0.337
+    }
+  ],
+  "updated": "2026-11-21"
+}

@@ -1,0 +1,120 @@
+{
+  "defaults": {
+    "ac": 0.35,
+    "dc": 0.45,
+    "fuel": 1.624,
+    "home": 0.251
+  },
+  "fuel": {
+    "date": "2026-11-16",
+    "price": 1.624
+  },
+  "home": [
+    {
+      "name": "Media doméstica (Eurostat H1 2026)",
+      "price": 0.251
+    }
+  ],
+  "networks": [
+    {
+      "ac": 0.35,
+      "dc": 0.45,
+      "hpc": 0.59,
+      "name": "Iberdrola | bp pulse"
+    },
+    {
+      "ac": 0.35,
+      "dc": 0.45,
+      "hpc": 0.55,
+      "name": "Endesa X Way"
+    },
+    {
+      "ac": 0.39,
+      "dc": 0.49,
+      "hpc": 0.62,
+      "name": "Repsol"
+    },
+    {
+      "ac": 0.42,
+      "dc": 0.42,
+      "hpc": 0.57,
+      "name": "Zunder"
+    },
+    {
+      "ac": null,
+      "dc": null,
+      "hpc": 0.46,
+      "name": "Tesla Supercharger",
+      "note": "μη Tesla"
+    },
+    {
+      "ac": null,
+      "dc": null,
+      "hpc": 0.64,
+      "name": "Ionity"
+    },
+    {
+      "ac": 0.25,
+      "dc": null,
+      "hpc": null,
+      "name": "Mercadona"
+    },
+    {
+      "ac": 0.29,
+      "dc": null,
+      "hpc": null,
+      "name": "Lidl"
+    }
+  ],
+  "note": "Ενδεικτικές τιμές χωρίς συνδρομή (φθινόπωρο 2026). Η τελική τιμή φαίνεται στην εφαρμογή κάθε δικτύου.",
+  "plans": [
+    {
+      "ac": 0.39,
+      "base": "Zunder",
+      "dc": 0.39,
+      "fee": 119.88,
+      "hpc": 0.39,
+      "name": "Zunder Pro"
+    },
+    {
+      "ac": null,
+      "base": "Ionity",
+      "dc": 0.37,
+      "fee": 143.88,
+      "hpc": 0.37,
+      "name": "Ionity Passport Power"
+    },
+    {
+      "ac": null,
+      "base": "Tesla Supercharger",
+      "baseNote": "μη Tesla",
+      "dc": 0.38,
+      "fee": 119.88,
+      "hpc": 0.38,
+      "name": "Tesla Supercharging"
+    }
+  ],
+  "sources": [
+    {
+      "title": "repostazo.es",
+      "url": "https://repostazo.es/guias/tarifas-carga-coche-electrico/"
+    },
+    {
+      "title": "EU Oil Bulletin",
+      "url": "https://www.fuel-prices.eu/weekly/"
+    },
+    {
+      "title": "Eurostat",
+      "url": "https://euenergyprices.eu/en/electricity"
+    }
+  ],
+  "tariffs": [
+    {
+      "id": "es_avg",
+      "kind": "flat",
+      "name": "Media doméstica (Eurostat H1 2026)",
+      "price": 0.251
+    }
+  ],
+  "updated": "2026-11-21"
+}

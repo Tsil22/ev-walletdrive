@@ -1,0 +1,237 @@
+{
+  "defaults": {
+    "ac": 0.4,
+    "dc": 0.52,
+    "fuel": 1.978,
+    "home": 0.169
+  },
+  "fuel": {
+    "date": "2026-11-15",
+    "price": 1.978
+  },
+  "home": [
+    {
+      "name": "ΔΕΗ πράσινο (Νοέ.)",
+      "price": 0.169
+    },
+    {
+      "name": "ΔΕΗ μπλε myHome Online",
+      "price": 0.13
+    }
+  ],
+  "networks": [
+    {
+      "ac": 0.4,
+      "dc": 0.52,
+      "hpc": 0.59,
+      "name": "ΔΕΗ blue",
+      "note": "μέλη"
+    },
+    {
+      "ac": 0.45,
+      "dc": 0.57,
+      "hpc": 0.64,
+      "name": "ΔΕΗ blue",
+      "note": "επισκέπτες"
+    },
+    {
+      "ac": 0.4,
+      "dc": 0.52,
+      "hpc": 0.62,
+      "name": "NRG incharge",
+      "note": "μέλη · DC αυτοκ/μων 0,62 · νύχτα AC 0,32"
+    },
+    {
+      "ac": 0.45,
+      "dc": 0.57,
+      "hpc": 0.67,
+      "name": "NRG incharge",
+      "note": "επισκέπτες"
+    },
+    {
+      "ac": 0.38,
+      "dc": 0.43,
+      "hpc": 0.53,
+      "name": "Chargespot (Protergia)",
+      "note": "μέλη"
+    },
+    {
+      "ac": 0.43,
+      "dc": 0.47,
+      "hpc": 0.56,
+      "name": "Chargespot (Protergia)",
+      "note": "επισκέπτες"
+    },
+    {
+      "ac": 0.4,
+      "dc": 0.5,
+      "hpc": 0.55,
+      "name": "EKO (Charge&Go)",
+      "note": "εγγεγραμμένοι"
+    },
+    {
+      "ac": 0.4,
+      "dc": 0.5,
+      "hpc": null,
+      "name": "ElpeFuture",
+      "note": "εγγεγραμμένοι"
+    },
+    {
+      "ac": 0.45,
+      "dc": 0.55,
+      "hpc": null,
+      "name": "ElpeFuture",
+      "note": "χωρίς εγγραφή"
+    },
+    {
+      "ac": 0.42,
+      "dc": 0.53,
+      "hpc": null,
+      "name": "Joltie",
+      "note": "ενδεικτικά (2024)"
+    },
+    {
+      "ac": 0.43,
+      "dc": 0.52,
+      "hpc": null,
+      "name": "Blink",
+      "note": "0,37 σε «Lucky Blink Spots»"
+    },
+    {
+      "ac": 0.37,
+      "dc": 0.47,
+      "hpc": 0.54,
+      "name": "Electrip",
+      "note": "ενδεικτικά (2024)"
+    },
+    {
+      "ac": 0.38,
+      "dc": null,
+      "hpc": null,
+      "name": "EV Loader",
+      "note": "0,38–0,55 ανά σημείο"
+    },
+    {
+      "ac": 0.5,
+      "dc": 0.6,
+      "hpc": null,
+      "name": "EVziin",
+      "note": "ίδια τιμή παντού"
+    },
+    {
+      "ac": 0.41,
+      "dc": 0.56,
+      "hpc": null,
+      "name": "PlugQ",
+      "note": "DC νύχτα 0,48 · ενδεικτικά (2024)"
+    },
+    {
+      "ac": 0.4,
+      "dc": 0.49,
+      "hpc": null,
+      "name": "eVplus",
+      "note": "ενδεικτικά (2024)"
+    },
+    {
+      "ac": 0.4,
+      "dc": 0.49,
+      "hpc": null,
+      "name": "ChargePlus",
+      "note": "ενδεικτικά (2024)"
+    },
+    {
+      "ac": null,
+      "dc": 0.38,
+      "hpc": null,
+      "name": "Fortizo",
+      "note": "DC ≈12,5 €/40 λεπτά · AC ανά σημείο"
+    },
+    {
+      "ac": null,
+      "dc": 0.49,
+      "hpc": 0.49,
+      "name": "Tesla Supercharger",
+      "note": "μη Tesla · Μαρούσι/Λάρισα 0,44–0,57"
+    }
+  ],
+  "note": "Τιμές με εγγραφή/χωρίς, ενδεικτικές· όπου γράφει (2024) δεν βρέθηκε νεότερη δημοσιευμένη τιμή. Η τελική τιμή φαίνεται στην εφαρμογή κάθε δικτύου.",
+  "plans": [
+    {
+      "ac": 0.37,
+      "base": "NRG incharge",
+      "baseNote": "μέλη · DC αυτοκ/μων 0,62 · νύχτα AC 0,32",
+      "dc": 0.49,
+      "fee": 50,
+      "hpc": 0.59,
+      "name": "NRG incharge Premium",
+      "note": "25 € τον πρώτο χρόνο· τιμές 2024"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ΔΕΗ blue",
+      "url": "https://www.deiblue.gr/el/lyseis-fortisis"
+    },
+    {
+      "title": "HELLENiQ ENERGY",
+      "url": "https://www.helleniqenergy.com/media/press-releases/nees-hamiloteres-times-fortisis-ilektrikon-ohimaton-apo-tin-elpefuture"
+    },
+    {
+      "title": "topontiki.gr (δίκτυα 5/2026)",
+      "url": "https://www.topontiki.gr/2026/05/27/ilektriko-aftokinito-oles-i-efarmoges-fortisis-stin-ellada-lista-2026/"
+    },
+    {
+      "title": "gocar.gr (incharge)",
+      "url": "https://www.gocar.gr/news/feed/48475,F8hnoterh_eykoloterh_fortish_Ellada_inch.html"
+    },
+    {
+      "title": "gocar.gr (έρευνα δικτύων)",
+      "url": "https://www.gocar.gr/news/feed/39860,ereyna_diktyo_fortiseis_f8hnotera_hlektr.html"
+    },
+    {
+      "title": "motorone.gr (Blink 8/2026)",
+      "url": "https://www.motorone.gr/epikairotita/ellada/202699/blink-fortisi-ilektrikou-aftokinitou-me-037e-kwh-se-epilegmena-simeia/"
+    },
+    {
+      "title": "gocar.gr (Tesla)",
+      "url": "https://www.gocar.gr/news/feed/48915,Tesla_posa_xrhmata_fortizeis_Ellada_HPA.html"
+    },
+    {
+      "title": "odigostoupoliti.eu (ΔΕΗ Νοέ.)",
+      "url": "https://www.odigostoupoliti.eu/dei-times-revmatos-noemvriou-2026-gia-prasino-kitrino-mple/"
+    },
+    {
+      "title": "antenna.gr (καύσιμα 15/11)",
+      "url": "https://www.antenna.gr/Economy/article/4/rsubtjcwyhlqwn382l8m1pd7/kaysima-kato-apo-ta-2-eyro-i-amolybdi-poy-kymainontai-benzini-ntizel-kai-petrelaio-thermansis"
+    }
+  ],
+  "tariffs": [
+    {
+      "id": "dei_green",
+      "kind": "flat",
+      "name": "ΔΕΗ Πράσινο (κυμαινόμενο, μηνιαία τιμή)",
+      "price": 0.169
+    },
+    {
+      "high": 0.169,
+      "id": "dei_green2",
+      "kind": "two",
+      "low": 0.167,
+      "name": "ΔΕΗ Πράσινο διζωνικό (νυχτερινό)"
+    },
+    {
+      "id": "dei_online",
+      "kind": "flat",
+      "name": "ΔΕΗ myHome Online (σταθερό)",
+      "price": 0.13
+    },
+    {
+      "high": 0.155,
+      "id": "dei_enter2",
+      "kind": "two",
+      "low": 0.115,
+      "name": "ΔΕΗ myHome EnterTwo (σταθερό διζωνικό)"
+    }
+  ],
+  "updated": "2026-11-21"
+}

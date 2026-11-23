@@ -1,0 +1,138 @@
+{
+  "defaults": {
+    "ac": 0.66,
+    "dc": 0.71,
+    "fuel": 1.97,
+    "home": 0.314
+  },
+  "fuel": {
+    "date": "2026-11-16",
+    "price": 1.97
+  },
+  "home": [
+    {
+      "name": "Media domestica (Eurostat H1 2026)",
+      "price": 0.314
+    }
+  ],
+  "networks": [
+    {
+      "ac": 0.69,
+      "dc": 0.76,
+      "hpc": 0.82,
+      "name": "Enel X Way"
+    },
+    {
+      "ac": 0.65,
+      "dc": 0.85,
+      "hpc": 0.9,
+      "name": "Plenitude (Be Charge)"
+    },
+    {
+      "ac": 0.5,
+      "dc": 0.65,
+      "hpc": 0.79,
+      "name": "Free To X"
+    },
+    {
+      "ac": 0.8,
+      "dc": 0.8,
+      "hpc": 0.8,
+      "name": "Ewiva"
+    },
+    {
+      "ac": 0.65,
+      "dc": 0.72,
+      "hpc": 0.9,
+      "name": "A2A"
+    },
+    {
+      "ac": 0.69,
+      "dc": 0.69,
+      "hpc": 0.69,
+      "name": "Electra"
+    },
+    {
+      "ac": 0.74,
+      "dc": 0.74,
+      "hpc": 0.79,
+      "name": "Duferco"
+    },
+    {
+      "ac": 0.6,
+      "dc": 0.65,
+      "hpc": 0.75,
+      "name": "Electrip"
+    },
+    {
+      "ac": null,
+      "dc": 0.85,
+      "hpc": 0.85,
+      "name": "Ionity"
+    },
+    {
+      "ac": null,
+      "dc": 0.83,
+      "hpc": 0.83,
+      "name": "Fastned"
+    },
+    {
+      "ac": 0.67,
+      "dc": 0.82,
+      "hpc": 0.88,
+      "name": "Atlante",
+      "note": "μέσω Enel X Way"
+    }
+  ],
+  "note": "Ενδεικτικές τιμές χωρίς συνδρομή (φθινόπωρο 2026). Η τελική τιμή φαίνεται στην εφαρμογή κάθε δικτύου.",
+  "plans": [
+    {
+      "ac": 0.49,
+      "base": "Atlante",
+      "baseNote": "μέσω Enel X Way",
+      "dc": 0.49,
+      "fee": 119.88,
+      "hpc": 0.49,
+      "name": "Atlante Go"
+    },
+    {
+      "ac": null,
+      "base": "Ionity",
+      "dc": 0.39,
+      "fee": 143.88,
+      "hpc": 0.39,
+      "name": "Ionity Power"
+    },
+    {
+      "ac": null,
+      "base": "Ionity",
+      "dc": 0.49,
+      "fee": 71.88,
+      "hpc": 0.49,
+      "name": "Ionity Motion"
+    }
+  ],
+  "sources": [
+    {
+      "title": "evvia.eu",
+      "url": "https://evvia.eu/it/prezzi-ricarica/"
+    },
+    {
+      "title": "elettricopertutti.it",
+      "url": "https://elettricopertutti.it/prezzi-colonnine-elettriche/"
+    },
+    {
+      "title": "EU Oil Bulletin",
+      "url": "https://www.fuel-prices.eu/weekly/"
+    }
+  ],
+  "tariffs": [
+    {
+      "id": "it_avg",
+      "kind": "flat",
+      "name": "Media domestica (Eurostat H1 2026)",
+      "price": 0.314
+    }
+  ],
+  "updated": "2026-11-21"
+}

@@ -1,0 +1,148 @@
+{
+  "defaults": {
+    "ac": 0.4,
+    "dc": 0.51,
+    "fuel": 2.048,
+    "home": 0.2001
+  },
+  "fuel": {
+    "date": "2026-11-16",
+    "price": 2.048
+  },
+  "home": [
+    {
+      "name": "EDF Tarif Bleu Base 6 kVA",
+      "price": 0.2001
+    }
+  ],
+  "networks": [
+    {
+      "ac": null,
+      "dc": 0.55,
+      "hpc": 0.62,
+      "name": "Ionity"
+    },
+    {
+      "ac": null,
+      "dc": 0.42,
+      "hpc": 0.62,
+      "name": "Tesla Supercharger",
+      "note": "μη Tesla"
+    },
+    {
+      "ac": null,
+      "dc": 0.49,
+      "hpc": 0.59,
+      "name": "Electra"
+    },
+    {
+      "ac": null,
+      "dc": 0.61,
+      "hpc": 0.61,
+      "name": "Fastned"
+    },
+    {
+      "ac": 0.4,
+      "dc": null,
+      "hpc": 0.69,
+      "name": "TotalEnergies"
+    },
+    {
+      "ac": 0.35,
+      "dc": 0.55,
+      "hpc": null,
+      "name": "Izivia"
+    },
+    {
+      "ac": null,
+      "dc": 0.6,
+      "hpc": 0.69,
+      "name": "ENGIE Vianeo"
+    },
+    {
+      "ac": 0.39,
+      "dc": 0.59,
+      "hpc": null,
+      "name": "Allego"
+    },
+    {
+      "ac": 0.29,
+      "dc": 0.39,
+      "hpc": null,
+      "name": "Lidl"
+    },
+    {
+      "ac": 0.25,
+      "dc": 0.45,
+      "hpc": null,
+      "name": "E.Leclerc"
+    },
+    {
+      "ac": 0.39,
+      "dc": 0.49,
+      "hpc": null,
+      "name": "Powerdot"
+    },
+    {
+      "ac": null,
+      "dc": 0.36,
+      "hpc": 0.54,
+      "name": "Atlante"
+    }
+  ],
+  "note": "Ενδεικτικές τιμές χωρίς συνδρομή (φθινόπωρο 2026). Η τελική τιμή φαίνεται στην εφαρμογή κάθε δικτύου. Όπου υπάρχει εύρος τιμών, το DC δείχνει τη χαμηλότερη και το HPC την υψηλότερη.",
+  "plans": [
+    {
+      "ac": null,
+      "base": "Ionity",
+      "dc": 0.33,
+      "fee": 120,
+      "hpc": 0.33,
+      "name": "Ionity Power 365"
+    },
+    {
+      "ac": null,
+      "base": "Tesla Supercharger",
+      "baseNote": "μη Tesla",
+      "dc": 0.28,
+      "fee": 119.88,
+      "hpc": 0.28,
+      "name": "Tesla Supercharging"
+    },
+    {
+      "ac": null,
+      "base": "Fastned",
+      "dc": 0.43,
+      "fee": 71.88,
+      "hpc": 0.43,
+      "name": "Fastned Gold"
+    },
+    {
+      "ac": null,
+      "base": "Atlante",
+      "dc": 0.29,
+      "fee": 59.88,
+      "hpc": 0.29,
+      "name": "Atlante Go"
+    }
+  ],
+  "sources": [
+    {
+      "title": "meilleurecharge.fr",
+      "url": "https://www.meilleurecharge.fr/operateur"
+    },
+    {
+      "title": "EU Oil Bulletin",
+      "url": "https://www.fuel-prices.eu/weekly/"
+    }
+  ],
+  "tariffs": [
+    {
+      "id": "fr_edf_base",
+      "kind": "flat",
+      "name": "EDF Tarif Bleu Base",
+      "price": 0.2001
+    }
+  ],
+  "updated": "2026-11-21"
+}

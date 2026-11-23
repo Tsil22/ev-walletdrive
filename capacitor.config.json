@@ -1,0 +1,7 @@
+{
+  "appId": "com.evwalletdrive.app",
+  "appName": "EV WalletDrive",
+  "webDir": "docs",
+  "android": { "backgroundColor": "#f3f6f4" },
+  "plugins": { "SystemBars": { "insetsHandling": "css", "initialViewportFitValueHint": "cover" } }
+}

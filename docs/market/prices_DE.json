@@ -1,0 +1,192 @@
+{
+  "defaults": {
+    "ac": 0.52,
+    "dc": 0.56,
+    "fuel": 2.03,
+    "home": 0.362
+  },
+  "fuel": {
+    "date": "2026-11-16",
+    "price": 2.03
+  },
+  "home": [
+    {
+      "name": "Ø Haushaltsstrom (Eurostat H1 2026)",
+      "price": 0.362
+    }
+  ],
+  "networks": [
+    {
+      "ac": 0.56,
+      "dc": 0.56,
+      "hpc": 0.56,
+      "name": "EnBW mobility+"
+    },
+    {
+      "ac": null,
+      "dc": 0.42,
+      "hpc": 0.42,
+      "name": "IONITY",
+      "note": "με εφαρμογή"
+    },
+    {
+      "ac": null,
+      "dc": 0.72,
+      "hpc": 0.72,
+      "name": "IONITY",
+      "note": "χωρίς εγγραφή"
+    },
+    {
+      "ac": 0.47,
+      "dc": 0.52,
+      "hpc": 0.62,
+      "name": "Aral pulse",
+      "note": "με εφαρμογή"
+    },
+    {
+      "ac": 0.59,
+      "dc": 0.69,
+      "hpc": 0.79,
+      "name": "Aral pulse",
+      "note": "χωρίς εγγραφή"
+    },
+    {
+      "ac": 0.52,
+      "dc": 0.52,
+      "hpc": 0.52,
+      "name": "EWE Go"
+    },
+    {
+      "ac": 0.52,
+      "dc": 0.52,
+      "hpc": 0.62,
+      "name": "Shell Recharge"
+    },
+    {
+      "ac": 0.47,
+      "dc": 0.44,
+      "hpc": 0.49,
+      "name": "Vattenfall InCharge"
+    },
+    {
+      "ac": 0.54,
+      "dc": 0.61,
+      "hpc": null,
+      "name": "E.ON Drive"
+    },
+    {
+      "ac": null,
+      "dc": 0.69,
+      "hpc": 0.69,
+      "name": "Fastned"
+    },
+    {
+      "ac": 0.29,
+      "dc": 0.44,
+      "hpc": 0.47,
+      "name": "Lidl",
+      "note": "ώρες καταστήματος"
+    },
+    {
+      "ac": 0.29,
+      "dc": 0.44,
+      "hpc": 0.47,
+      "name": "Kaufland",
+      "note": "με εφαρμογή"
+    },
+    {
+      "ac": 0.29,
+      "dc": 0.44,
+      "hpc": 0.47,
+      "name": "ALDI Süd",
+      "note": "ώρες καταστήματος"
+    }
+  ],
+  "note": "Ενδεικτικές τιμές χωρίς συνδρομή (φθινόπωρο 2026). Η τελική τιμή φαίνεται στην εφαρμογή κάθε δικτύου.",
+  "plans": [
+    {
+      "ac": 0.46,
+      "base": "EnBW mobility+",
+      "dc": 0.46,
+      "fee": 71.88,
+      "hpc": 0.46,
+      "name": "EnBW mobility+ M"
+    },
+    {
+      "ac": 0.39,
+      "base": "EnBW mobility+",
+      "dc": 0.39,
+      "fee": 143.88,
+      "hpc": 0.39,
+      "name": "EnBW mobility+ L"
+    },
+    {
+      "ac": 0.41,
+      "base": "Aral pulse",
+      "baseNote": "με εφαρμογή",
+      "dc": 0.46,
+      "fee": 35.88,
+      "hpc": 0.54,
+      "name": "Aral pulse Extra"
+    },
+    {
+      "ac": 0.39,
+      "base": "Shell Recharge",
+      "dc": 0.39,
+      "fee": 71.88,
+      "hpc": 0.47,
+      "name": "Shell Recharge e-Deal"
+    },
+    {
+      "ac": null,
+      "base": "Fastned",
+      "dc": 0.48,
+      "fee": 143.88,
+      "hpc": 0.48,
+      "name": "Fastned Gold"
+    }
+  ],
+  "sources": [
+    {
+      "title": "tank-pilot.com",
+      "url": "https://tank-pilot.com/ladetarife-vergleich"
+    },
+    {
+      "title": "voylt.com",
+      "url": "https://www.voylt.com/news/e-auto-ladepreise-2026-anbieter-vergleich"
+    },
+    {
+      "title": "EU Oil Bulletin",
+      "url": "https://www.fuel-prices.eu/weekly/"
+    },
+    {
+      "title": "Eurostat",
+      "url": "https://euenergyprices.eu/en/electricity"
+    },
+    {
+      "title": "stromauskunft.de (22.11.2026)",
+      "url": "https://www.stromauskunft.de/verbraucherservice/strompreis-2020/"
+    }
+  ],
+  "tariffs": [
+    {
+      "id": "de_avg",
+      "kind": "flat",
+      "name": "Ø Haushaltsstrom (Eurostat H1 2026)",
+      "price": 0.362
+    },
+    {
+      "id": "de_oeko",
+      "kind": "flat",
+      "name": "Günstiger Ökostrom-Tarif (Ø inkl. Grundpreis)",
+      "price": 0.3346
+    },
+    {
+      "id": "de_grund",
+      "kind": "flat",
+      "name": "Grundversorgung (Ø inkl. Grundpreis)",
+      "price": 0.413
+    }
+  ],
+  "updated": "2026-11-23"
+}
