@@ -203,6 +203,10 @@
     {
       "title": "antenna.gr (καύσιμα 15/11)",
       "url": "https://www.antenna.gr/Economy/article/4/rsubtjcwyhlqwn382l8m1pd7/kaysima-kato-apo-ta-2-eyro-i-amolybdi-poy-kymainontai-benzini-ntizel-kai-petrelaio-thermansis"
+    },
+    {
+      "title": "selectra.gr (πάροχοι Νοέ. 2026)",
+      "url": "https://selectra.gr/energeia/timologia-reymatos"
     }
   ],
   "tariffs": [
@@ -231,7 +235,63 @@
       "kind": "two",
       "low": 0.115,
       "name": "ΔΕΗ myHome EnterTwo (σταθερό διζωνικό)"
+    },
+    {
+      "fee": 15.9,
+      "id": "heron_fix",
+      "kind": "flat",
+      "name": "Ήρων Blue Smart More Home (σταθερό)",
+      "price": 0.139
+    },
+    {
+      "fee": 10.9,
+      "id": "prot_fix",
+      "kind": "flat",
+      "name": "Protergia Value Balance 12M (σταθερό)",
+      "price": 0.139
+    },
+    {
+      "fee": 15.9,
+      "id": "elp_fix",
+      "kind": "flat",
+      "name": "Enerwave (Elpedison) Reward Stable Max 24M (σταθερό)",
+      "price": 0.129
+    },
+    {
+      "fee": 15.9,
+      "id": "nrg_fix",
+      "kind": "flat",
+      "name": "NRG adjust 24M (σταθερό)",
+      "price": 0.139
+    },
+    {
+      "fee": 12.9,
+      "id": "zen_fix",
+      "kind": "flat",
+      "name": "ZeniΘ Power Home Fixed Protect Digital (σταθερό)",
+      "price": 0.179
+    },
+    {
+      "fee": 9.9,
+      "id": "vol_fix",
+      "kind": "flat",
+      "name": "Volton Blue Fixed Plus 24M (σταθερό)",
+      "price": 0.165
+    },
+    {
+      "fee": 8.9,
+      "id": "elin_fix",
+      "kind": "flat",
+      "name": "ΕΛΙΝΟΙΛ Power On! Blue Home 12M (σταθερό)",
+      "price": 0.1599
+    },
+    {
+      "fee": 8,
+      "id": "eun_fix",
+      "kind": "flat",
+      "name": "Eunice Home SECURE Start (σταθερό)",
+      "price": 0.145
     }
   ],
-  "updated": "2026-11-21"
+  "updated": "2026-11-24"
 }

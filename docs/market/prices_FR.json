@@ -134,15 +134,28 @@
     {
       "title": "EU Oil Bulletin",
       "url": "https://www.fuel-prices.eu/weekly/"
+    },
+    {
+      "title": "selectra.info (EDF Tarif Bleu 8/2026)",
+      "url": "https://selectra.info/energie/fournisseurs/edf/tarifs/tarif-bleu"
     }
   ],
   "tariffs": [
     {
+      "fee": 15.86,
       "id": "fr_edf_base",
       "kind": "flat",
       "name": "EDF Tarif Bleu Base",
       "price": 0.2001
+    },
+    {
+      "fee": 15.86,
+      "high": 0.2142,
+      "id": "fr_edf_hc",
+      "kind": "two",
+      "low": 0.1589,
+      "name": "EDF Tarif Bleu Heures Creuses"
     }
   ],
-  "updated": "2026-11-21"
+  "updated": "2026-11-24"
 }
