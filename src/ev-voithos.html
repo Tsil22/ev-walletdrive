@@ -2157,6 +2157,7 @@ function openRem(id){
   $("remModal").classList.add("on");
 }
 function closeRem(){$("remModal").classList.remove("on")}
+function delRemId(id){S.rem=(S.rem||[]).filter(x=>x.id!==id);save();renderHome();toast("Διαγράφηκε")}
 function delRem(){S.rem=S.rem.filter(x=>x.id!==remId);save();closeRem();renderRem();toast("Διαγράφηκε")}
 $("remForm").addEventListener("submit",e=>{
   e.preventDefault();
@@ -2187,7 +2188,7 @@ function doneRem(id){
 function renderRem(){
   const list=S.rem.map(r=>({r,st:remStatus(r)})).sort((a,b)=>a.st.rank-b.st.rank);
   $("rem_list").innerHTML=list.length?list.map(({r,st})=>`<div class="it"><div style="min-width:0;cursor:pointer" role="button" tabindex="0" onclick="openRem('${r.id}')" onkeydown="if(event.key==='Enter'){openRem('${r.id}')}"><div class="t">${esc(r.name)} <span class="pill ${st.late?"late":st.soon?"soon":"ok"}">${st.late?"ΕΛΗΞΕ":st.soon?"ΣΥΝΤΟΜΑ":"OK"}</span></div><div class="s">${st.txt}${r.em||r.ek?" · "+T(r.em&&r.ek?`κάθε ${r.em} μήνες ή ${nf(r.ek,0)} km`:r.em?`κάθε ${r.em} μήνες`:`κάθε ${nf(r.ek,0)} km`):""}</div></div>
-    <button type="button" class="btn ghost sm" onclick="doneRem('${r.id}')">Έγινε</button></div>`).join("")
+    <div class="row" style="gap:4px;flex:none"><button type="button" class="btn ghost sm" onclick="doneRem('${r.id}')">Έγινε</button><button type="button" class="del" aria-label="Επεξεργασία" onclick="openRem('${r.id}')">✎</button><button type="button" class="del" aria-label="Διαγραφή" onclick="delRemId('${r.id}')">×</button></div></div>`).join("")
     :`<div class="empty" style="padding:8px 0">Καμία υπενθύμιση ακόμα. Πρόσθεσε ΚΤΕΟ, σέρβις ή ασφάλεια για να μη σου ξεφύγει τίποτα.</div>`;
   const hasD=S.rem.some(r=>r.date);
   $("rem_note").innerHTML=(curOdo()?`Τα χλμ μετρούν από τα ${nf(curOdo(),0)} km της τελευταίας καταγραφής. `:"Για υπενθυμίσεις με χλμ, γράφε τα συνολικά χλμ στις φορτίσεις. ")+(hasD?`<a href="#home" style="color:var(--accent);font-weight:700" onclick="event.preventDefault();exportIcs()">Πρόσθεσέ τις στο ημερολόγιο του κινητού</a>`:"");
