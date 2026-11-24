@@ -2,8 +2,13 @@
   "defaults": {
     "ac": 0.66,
     "dc": 0.71,
+    "diesel": 2.21,
     "fuel": 1.97,
     "home": 0.314
+  },
+  "diesel": {
+    "date": "2026-11-16",
+    "price": 2.21
   },
   "fuel": {
     "date": "2026-11-16",
