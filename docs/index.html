@@ -1151,7 +1151,10 @@ function merge(base,o){ // shallow-deep merge for known shape
 }
 function fixObc(raw){if(CAR_ALIAS[S.p.model])S.p.model=CAR_ALIAS[S.p.model];if(!(raw&&raw.p&&raw.p.obc)&&OBC[S.p.model]) S.p.obc=OBC[S.p.model];}
 function lsGet(){try{return JSON.parse(localStorage.getItem(LSKEY))}catch(e){return null}}
-function lsSet(){try{localStorage.setItem(LSKEY,JSON.stringify(S))}catch(e){} bakSet();}
+// Χιλιόμετρα αυτοκινήτου = το μεγαλύτερο από φορτίσεις, έξοδα και την αρχική ρύθμιση· ξαναϋπολογίζεται πάντα, ώστε μια διαγραφή να το διορθώνει μόνη της
+function syncNow(gone){const n=S.now||(S.now={}), m=Math.max(n.mo||0,S.p.dodo||0,...(S.sessions||[]).map(x=>x.odo||0),...(S.exp||[]).map(x=>x.odo||0)); n.odo=m>0?m:null;
+  if(gone&&gone.s2!=null&&n.soc===gone.s2){const nw=(S.sessions||[]).slice().sort((x,y)=>(y.date+"|"+y.id).localeCompare(x.date+"|"+x.id))[0]; if(nw&&nw.s2!=null) n.soc=nw.s2;}}
+function lsSet(){syncNow();try{localStorage.setItem(LSKEY,JSON.stringify(S))}catch(e){} bakSet();}
 // αντίγραφο ασφαλείας φορτίσεων σε αυτή τη συσκευή (δεν γράφεται ποτέ από το cloud με λιγότερες)
 function unionSessions(a,b,del){const m=new Map();[...(a||[]),...(b||[])].forEach(s=>{if(s&&s.id&&!(del&&del.has(s.id))&&!m.has(s.id))m.set(s.id,s)});return [...m.values()].sort((x,y)=>String(y.date).localeCompare(String(x.date))||String(y.id).localeCompare(String(x.id)));}
 function bakKey(){return LSKEY+"-bak"+(S.carId&&S.carId!=="c1"?"-"+S.carId:"")} // ξεχωριστό αντίγραφο για κάθε αυτοκίνητο
@@ -1572,7 +1575,7 @@ function delDups(){const d=findDups(); if(!d.length) return; const ids=new Set(d
 let dupWarn=null;
 function crossDedup(pri,sec,del){const ids=new Set((pri||[]).map(x=>x.id)), keys=new Set((pri||[]).map(dupKey));
   return (sec||[]).filter(x=>{if(!x||ids.has(x.id)||!keys.has(dupKey(x))) return true; del.add(x.id); return false});}
-function delSession(id){S.sessions=S.sessions.filter(s=>s.id!==id);S.del=(S.del||[]).concat(id).slice(-500);save();renderLog()}
+function delSession(id){const g=S.sessions.find(s=>s.id===id);S.sessions=S.sessions.filter(s=>s.id!==id);S.del=(S.del||[]).concat(id).slice(-500);syncNow(g);save();recalc()}
 const TL={home:"ΣΠΙΤΙ",ac:"AC",dc:"DC"};
 const MONTHS=["Ιαν","Φεβ","Μαρ","Απρ","Μάι","Ιουν","Ιουλ","Αυγ","Σεπ","Οκτ","Νοε","Δεκ"];
 function renderLog(){
@@ -2304,6 +2307,7 @@ function migrate(raw){
   if(!raw||typeof raw!=="object") return;
   if(!raw.tariff){ S.tariff = raw.p&&raw.p.auto===false ? {id:"custom",kind:"flat",price:S.p.home} : {id:"dei_green",kind:"flat",price:S.p.home}; }
   if(raw.onboarded==null && ((raw.sessions&&raw.sessions.length)||(raw.p&&raw.p.model&&raw.p.model!=="custom"))) S.onboarded=true;
+  syncNow();
 }
 // ---------- Ποιο τιμολόγιο σε συμφέρει ----------
 function tfAuto(){ // kWh από το δίκτυο για φόρτιση στο σπίτι ανά μήνα: τελευταίες 90 μέρες του ημερολογίου, αλλιώς από τον μηνιαίο υπολογισμό
@@ -2359,7 +2363,7 @@ $("expForm").addEventListener("submit",e=>{e.preventDefault();
   if(rec.odo&&rec.odo>(S.now.odo||0)) S.now.odo=rec.odo;
   xEdit=null; save(); closeExp(); recalc(); toast("Αποθηκεύτηκε ✓");});
 function delExp(id,btn){ if(btn&&!btn.dataset.ok){btn.dataset.ok=1;btn.textContent=T("Σίγουρα;");setTimeout(()=>{if(btn.isConnected){delete btn.dataset.ok;btn.textContent="×"}},3000);return}
-  S.exp=(S.exp||[]).filter(x=>x.id!==id); S.del=(S.del||[]).concat(id).slice(-500); save(); renderExp();}
+  S.exp=(S.exp||[]).filter(x=>x.id!==id); S.del=(S.del||[]).concat(id).slice(-500); save(); recalc();}
 function renderExp(){ if(!$("x_stats")||!YDATA) return;
   const E=S.exp||[], cy=new Date().getFullYear(), yrs=[...new Set([cy,YR||cy,...E.map(x=>+x.date.slice(0,4)),...(S.sessions||[]).map(s=>+s.date.slice(0,4))])].sort((a,b)=>b-a);
   const Y=yrs.includes(YR)?YR:cy; $("x_sel").innerHTML=yrs.map(y=>`<option value="${y}">${y}</option>`).join(""); $("x_sel").value=Y;
@@ -2475,7 +2479,7 @@ function finishOb(skip){
   if(!skip){
     const c=CARS.find(c=>c[0]===$("ob_model").value);
     if(c){S.p.model=c[0]; if(c[0]!=="custom"){S.p.cap=c[2];S.p.cons=c[3];S.p.obc=c[4];S.p.dcmax=c[5];}}
-    const oo=num($("ob_odo").value); S.now={soc:+$("ob_soc").value,odo:oo>0?oo:S.now.odo,t:Date.now()};
+    const oo=num($("ob_odo").value); S.now={soc:+$("ob_soc").value,odo:oo>0?oo:S.now.odo,mo:oo>0?oo:(S.now.mo||null),t:Date.now()};
     if(!S.sessions.length){S.p.dsoc=+$("ob_soc").value; if(oo>0) S.p.dodo=oo;}
     const o=HOMEOPT.find(x=>x[0]===obHome);
     const pub=Math.min(100,Math.max(0,num($("ob_pub").value)));
