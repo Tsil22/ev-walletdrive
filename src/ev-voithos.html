@@ -1759,15 +1759,20 @@ function restoreBackup(st){
   const ok=x=>x&&x.id, okS=x=>ok(x)&&x.date&&x.kwh>0;
   const cnt=()=>{const c=(S.cars||[]).filter(x=>x.id!==S.carId); return {s:S.sessions.length+c.reduce((n,x)=>n+(x.sessions||[]).length,0), x:(S.exp||[]).length+c.reduce((n,x)=>n+(x.exp||[]).length,0), r:(S.rem||[]).length}};
   const empty=!S.sessions.length&&!(S.exp||[]).length&&!(S.rem||[]).length&&!(S.cars||[]).length;
+  // Ό,τι είχε σβηστεί (σε αυτή ή σε άλλη συσκευή) κρατιέται στη λίστα διαγραμμένων και θα ξανασβηνόταν στον συγχρονισμό.
+  // Γι' αυτό όσα επαναφέρονται με τέτοιο κωδικό παίρνουν νέο κωδικό, ώστε να μείνουν παντού.
+  const tomb=new Set([...(S.del||[]),...(st.del||[])]); let rn=0;
+  const fresh=x=>x&&x.id&&tomb.has(x.id)?Object.assign({},x,{id:x.id+"r"+Date.now().toString(36).slice(-5)+(rn++)}):x;
+  st.sessions=st.sessions.map(fresh); st.exp=(st.exp||[]).map(fresh);
+  st.cars=(st.cars||[]).map(c=>c?Object.assign({},c,{sessions:(c.sessions||[]).map(fresh),exp:(c.exp||[]).map(fresh)}):c);
   const b0=cnt();
   if(empty){
     const keep={lang:S.ui.lang,theme:S.ui.theme};
     S=merge(DEF,st); fixObc(st); migrate(st);
-    S.sessions=(S.sessions||[]).filter(okS); S.onboarded=true; if(!st.ui) Object.assign(S.ui,keep);
+    S.sessions=(S.sessions||[]).filter(okS); S.onboarded=true; if(!st.ui) Object.assign(S.ui,keep); S.del=[...tomb].slice(-500);
   } else {
-    const fromIds=new Set(st.sessions.map(x=>x&&x.id));
-    S.del=(S.del||[]).filter(id=>!fromIds.has(id)&&!(st.exp||[]).some(x=>x&&x.id===id));
-    const add=(cur,inc,dd)=>{const d=new Set(); const sec=dd?crossDedup(cur,(inc||[]).filter(okS),d):(inc||[]).filter(ok); return unionSessions(cur,sec,null)};
+    const xk=x=>x.date+"|"+x.cat+"|"+(+x.amt).toFixed(2);
+    const add=(cur,inc,dd)=>{const d=new Set(), have=new Set((cur||[]).map(xk)); const sec=dd?crossDedup(cur,(inc||[]).filter(okS),d):(inc||[]).filter(x=>ok(x)&&!have.has(xk(x))); return unionSessions(cur,sec,null)};
     const intoCar=(id,sess,exp,whole)=>{
       if(id===(S.carId||"c1")){ S.sessions=add(S.sessions,sess,1); S.exp=add(S.exp,exp); return; }
       const c=(S.cars||[]).find(x=>x.id===id);
