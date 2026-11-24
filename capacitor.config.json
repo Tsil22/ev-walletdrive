@@ -3,5 +3,5 @@
   "appName": "EV WalletDrive",
   "webDir": "docs",
   "android": { "backgroundColor": "#f3f6f4" },
-  "plugins": { "SystemBars": { "insetsHandling": "css", "initialViewportFitValueHint": "cover" } }
+  "plugins": { "LocalNotifications": { "smallIcon": "ic_stat_ev", "iconColor": "#0f9d5a" }, "SystemBars": { "insetsHandling": "css", "initialViewportFitValueHint": "cover" } }
 }
