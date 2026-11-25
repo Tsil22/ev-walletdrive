@@ -2068,10 +2068,10 @@ function calcRoute(){
       for(let i=0;i<N.length-1;i++){const bi=best[i]; if(!bi) continue;
         for(let j=i+1;j<N.length;j++){const d=N[j].at-N[i].at; if(d<=0) continue; const want=res+pc(d)+(N[j].end?5:0);
           const fr=i>0&&freeAt(N[i]), b0=i>0?Math.max(bi.arr,want):0;
-          for(const lvx of fr&&Math.min(FT,cmax)>b0?[b0,Math.min(FT,cmax)]:[b0]){ /* σε δωρεάν σταθμό δοκιμάζεται και γέμισμα ως 80% */
+          for(const lvx of fr?[...new Set([b0,Math.min(FT,cmax),cmax].filter(x=>x>=b0))]:[b0]){ /* σε δωρεάν σταθμό δοκιμάζεται και γέμισμα ως 80% */
           let t=bi.t, arr;
           if(i===0){ const ok0=N[j].end&&left<=0.01; /* φτάνεις χωρίς στάση */ if(soc<want&&!ok0) { /* χρειάζεται στάση πριν */ if(j===N.length-1) continue; } arr=soc-pc(d); if(arr<res&&!ok0) continue; }
-          else { if(want>cmax) continue; const kw=N[i].kw>=50?Math.min(carDc(),N[i].kw):carMax; const lv=lvx, kq=(lv-bi.arr)/100*cap; t+=Math.max(0,chgMins(bi.arr,lv,cap,kw))+10-(fr?Math.min(20,kq*(S.p.dc||0.5)*2):0); /* δωρεάν: κάθε € που γλιτώνεις μετράει σαν 2 λεπτά */ arr=lv-pc(d); }
+          else { if(want>cmax) continue; const kw=N[i].kw>=50?Math.min(carDc(),N[i].kw):carMax; const lv=lvx, kq=(lv-bi.arr)/100*cap; t+=Math.max(0,chgMins(bi.arr,lv,cap,kw))+10-(fr?((b0-bi.arr)*(S.p.dc||0.5)+(lv-b0)*(N[j].end?(S.p.home||0.15):(S.p.dc||0.5)))/100*cap*2:0); /* ό,τι θα πλήρωνες σε ταχυφορτιστή μετράει με την τιμή του· το περίσσευμα στην άφιξη με την τιμή του σπιτιού */ /* δωρεάν: κάθε € που γλιτώνεις μετράει σαν 2 λεπτά */ arr=lv-pc(d); }
           if(!best[j]||t<best[j].t) best[j]={t,arr,prev:i,lv:i>0?lvx:0};}}}
       const e=N.length-1; if(!best[e]) return null; const seq=[], lvs=[]; for(let k=best[e].prev, nx=e;k>0;nx=k,k=best[k].prev){ seq.unshift(k); lvs.unshift(best[nx].lv); } return {seq:seq.map(k=>N[k]),lvs,t:best[e].t};};
     const pick=list=>{const pA=plan(tgt,list), pB=plan(95,list); if(pA) pA.cm=tgt; if(pB) pB.cm=95; const fz=q=>q.seq.some(c=>c.free); return pA&&(!pB||pA.t<=pB.t+(fz(pB)&&!fz(pA)?0:5))?pA:pB}; /* δωρεάν στάση: χωρίς την ανοχή των 5 λεπτών */
