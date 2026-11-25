@@ -129,6 +129,10 @@
     {
       "title": "EU Oil Bulletin",
       "url": "https://www.fuel-prices.eu/weekly/"
+    },
+    {
+      "title": "ARERA (tutela vulnerabilità IV trim. 2026)",
+      "url": "https://www.arera.it/comunicati-stampa/dettaglio/elettricita-maggior-tutela-373-nel-iv-trimestre-2026-per-i-clienti-vulnerabili"
     }
   ],
   "tariffs": [
@@ -137,7 +141,13 @@
       "kind": "flat",
       "name": "Media domestica (Eurostat H1 2026)",
       "price": 0.314
+    },
+    {
+      "id": "it_tutela",
+      "kind": "flat",
+      "name": "Servizio tutela vulnerabilità (ARERA, IV trim. 2026)",
+      "price": 0.4343
     }
   ],
-  "updated": "2026-11-21"
+  "updated": "2026-11-25"
 }

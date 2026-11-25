@@ -2,17 +2,17 @@
   "defaults": {
     "ac": 0.4,
     "dc": 0.52,
-    "diesel": 2.038,
-    "fuel": 1.978,
+    "diesel": 1.995,
+    "fuel": 1.923,
     "home": 0.169
   },
   "diesel": {
-    "date": "2026-11-16",
-    "price": 2.038
+    "date": "2026-11-23",
+    "price": 1.995
   },
   "fuel": {
-    "date": "2026-11-15",
-    "price": 1.978
+    "date": "2026-11-23",
+    "price": 1.923
   },
   "home": [
     {
@@ -206,8 +206,8 @@
       "url": "https://www.odigostoupoliti.eu/dei-times-revmatos-noemvriou-2026-gia-prasino-kitrino-mple/"
     },
     {
-      "title": "antenna.gr (καύσιμα 15/11)",
-      "url": "https://www.antenna.gr/Economy/article/4/rsubtjcwyhlqwn382l8m1pd7/kaysima-kato-apo-ta-2-eyro-i-amolybdi-poy-kymainontai-benzini-ntizel-kai-petrelaio-thermansis"
+      "title": "protothema.gr (καύσιμα 23/11)",
+      "url": "https://www.protothema.gr/economy/article/1916004/upohoroun-oi-times-ton-kausimon-sto-1923-i-amoluvdi-panelladika-sto-1889-stin-attiki/"
     },
     {
       "title": "selectra.gr (πάροχοι Νοέ. 2026)",
@@ -298,5 +298,5 @@
       "price": 0.145
     }
   ],
-  "updated": "2026-11-24"
+  "updated": "2026-11-25"
 }
