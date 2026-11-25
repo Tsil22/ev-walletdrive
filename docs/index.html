@@ -2029,7 +2029,7 @@ function seaRoute(A,B,dist){ if(!A||!B||A===B) return []; const iA=TOWNS.indexOf
   return SEAP.filter(x=>x.mn[iA]>0&&x.mn[iB]>0&&x.mn[iA]+x.mn[iB]<=ABd*1.03+4).map(x=>Object.assign({},x,{at:x.km[iA]/AB*dist})).sort((a,b)=>a.at-b.at);}
 let RSEA=[];
 function calcRoute(){
-  if(!$("r_towns").options.length) $("r_towns").innerHTML=TOWNS.map(t=>`<option value="${t[0]}">`).join("");
+  if(!$("r_towns").options.length) $("r_towns").innerHTML=TOWNS.map(t=>t[0]).sort((a,b)=>a.localeCompare(b,"el")).map(n=>`<option value="${n}">`).join("");
   if(!$("r_net").options.length) fillRNet();
   const A=townOf($("r_from").value), B=townOf($("r_to").value), pth=A&&B&&A!==B?roadPath(A[0],B[0]):null;
   const realKm=A&&B&&A!==B?tkm(A,B):0;
