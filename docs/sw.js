@@ -1,5 +1,5 @@
 // Η εφαρμογή ανοίγει και χωρίς σύνδεση. Τιμές και καιρός (market/) πρώτα από το δίκτυο, αλλιώς από την cache.
-const CACHE = "evwd-8d3db4dd54";
+const CACHE = "evwd-99601cc8b7";
 const SHELL = ["./", "index.html", "shim.js", "manifest.webmanifest", "fonts/manrope.css",
   "icons/icon-192.png", "icons/apple-touch-icon.png"];
 
