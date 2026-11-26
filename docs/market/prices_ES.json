@@ -91,6 +91,14 @@
     },
     {
       "ac": null,
+      "base": "Ionity",
+      "dc": 0.46,
+      "fee": 71.88,
+      "hpc": 0.46,
+      "name": "Ionity Passport Motion"
+    },
+    {
+      "ac": null,
       "base": "Tesla Supercharger",
       "baseNote": "μη Tesla",
       "dc": 0.38,
@@ -121,5 +129,5 @@
       "price": 0.251
     }
   ],
-  "updated": "2026-11-21"
+  "updated": "2026-11-26"
 }
