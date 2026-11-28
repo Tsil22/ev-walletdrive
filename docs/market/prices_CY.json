@@ -1,5 +1,7 @@
 {
   "defaults": {
+    "ac": 0.42,
+    "dc": 0.45,
     "diesel": 1.986,
     "fuel": 1.625,
     "home": 0.337
@@ -18,7 +20,15 @@
       "price": 0.337
     }
   ],
-  "networks": [],
+  "networks": [
+    {
+      "ac": 0.42,
+      "dc": 0.45,
+      "hpc": null,
+      "name": "EAC e-charge",
+      "note": "χωρίς εγγραφή"
+    }
+  ],
   "note": "Δεν βρέθηκαν δημοσιευμένες τιμές για τα δημόσια δίκτυα της Κύπρου. Βάλε στις Ρυθμίσεις τις τιμές του δικτύου που χρησιμοποιείς.",
   "plans": [],
   "sources": [
@@ -29,6 +39,10 @@
     {
       "title": "EU Oil Bulletin",
       "url": "https://www.fuel-prices.eu/weekly/"
+    },
+    {
+      "title": "EAC e-charge",
+      "url": "https://pilot.eac.com.cy/en/non-regulated-activities/e-charge/"
     }
   ],
   "tariffs": [
@@ -39,5 +53,5 @@
       "price": 0.337
     }
   ],
-  "updated": "2026-11-21"
+  "updated": "2026-11-27"
 }
